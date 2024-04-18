@@ -1,0 +1,584 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c1bbb2;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navColor {
+    background-color: #40B3A2;
+}
+
+.intro {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.introText {
+    font-size: 20px;
+}
+
+.container {
+    background-color: #F7F4F0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.about_me_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.werBinIch {
+    color: #40B3A2;
+    font-size: 34px;
+    text-shadow: 5px 5px 4px #c1bbb2;
+}
+
+h2 {
+  font-size: 35px;
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.aboutMeKurz {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.inKurze {
+    border: 1px solid #ede4d8;
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 5px 5px 10px #c1bbb2;
+}
+
+.about_me_pic {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+} 
+
+.slavaPhoto {
+  width: 350px;
+  height: 420px;
+}
+
+.kurzItem {
+    text-decoration: underline;
+    font-size: 25px;
+}
+
+hr {
+    margin-top: 50px;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+  }
+  
+  @property --gradX {
+    syntax: '<percentage>';
+    initial-value: 50%;
+    inherits: true;
+  }
+  
+  @property --gradY {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: true;
+  }
+  
+  :root {
+      --d: 2500ms;
+      --angle: 90deg;
+      --gradX: 100%;
+      --gradY: 50%;
+      --c1: rgb(109,197,184);
+      --c2: rgba(168, 239, 255, 0.1);
+  }
+  
+  .box {
+      border: 0.35rem solid;
+      padding: 10px;
+      border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+      animation: borderRotate var(--d) linear infinite forwards;
+  }
+  
+  .box:nth-child(2) {
+      border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+      animation: borderRadial var(--d) linear infinite forwards;
+  }
+  
+  @keyframes borderRotate {
+      100% {
+          --angle: 420deg;
+      }
+  }
+  
+  @keyframes borderRadial {
+      20% {
+          --gradX: 100%;
+          --gradY: 50%;
+      }
+      40% {
+          --gradX: 100%;
+          --gradY: 100%;
+      }
+      60% {
+          --gradX: 50%;
+          --gradY: 100%;
+      }
+      80% {
+          --gradX: 0%;
+          --gradY: 50%;
+      }
+      100% {
+          --gradX: 50%;
+          --gradY: 0%;
+      }
+  }
+
+h3 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 25px;
+}
+
+.par {
+    font-size: 23px;
+}
+
+.contAboutMe {
+  background-color: white; 
+  padding: 60px 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.btnCont {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btnAboutMe {
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #40B3A2;
+  min-width: 200px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+  padding: 16px 20px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+  }
+
+.btnAboutMe:hover {
+  opacity: .95;
+}
+
+.btnAboutMe .animation {
+  border-radius: 100%;
+  animation: ripple 0.6s linear infinite;
+}
+
+@keyframes ripple {
+  0% {
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+  }
+
+  100% {
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+  }
+}
+
+.aboutMeToggle {
+  display: none;
+}
+
+.aboutMeToggleStyle {
+  background-image: url("https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 90px 50px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.toggleGlass {
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.35);
+border-radius: 10px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.4px);
+-webkit-backdrop-filter: blur(6.4px);
+border: 1px solid rgba(255, 255, 255, 0.61);
+padding: 40px;
+}
+
+.aboutMeToggleBlock {
+  display: block;
+}
+
+#services {
+    margin-top: 70px;
+}
+
+.containerServices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.serviceOne {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 330px;
+    height: 330px;
+    margin: 5px;
+    padding: 20px;
+    border: 2px solid #ede4d8;
+    border-radius: 20px;
+    background-color: #fdfdfb;
+    box-shadow: 5px 5px 10px #c1bbb2;
+}
+
+.serviceOne:hover {
+    background-color: #edeae2;
+}
+
+.statisticPic {
+    width: 140px;
+}
+
+.statisticCont {
+    margin: 10px;
+}
+
+.statisticText {
+    text-align: center;
+    font-size: 23px;
+}
+
+.successImg {
+  width: 45px;
+}
+
+.listCont {
+  padding: 0;
+}
+
+.listItem {
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 5px;
+    border: 2px solid #ede4d8;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 5px 5px 10px #c1bbb2;
+}
+
+.listItem:hover {
+    background-color: rgb(234, 228, 217);
+}
+
+.containerWork {
+    display: flex;
+    justify-content: space-around;
+}
+
+.workItem {
+    flex: 1;
+    margin: 5px;
+    padding: 20px;
+    border: 2px solid #ede4d8;
+    border-radius: 20px;
+    background-color: #fdfdfb;
+    text-align: justify;
+    box-shadow: 5px 5px 10px #c1bbb2;
+}
+
+.workItem:hover {
+    background-color: #edeae2;
+}
+
+.pokalImg {
+  width: 45px;
+}
+
+#testimonials {
+    background-color: #ede4d8;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.contactText {
+    text-align: center;
+}
+
+.datenschutz, .impressum {
+    padding: 40px;
+    margin: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+h4 {
+    font-size: 25px;
+    text-align: center;
+}
+h5 {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+#fs-frm input,
+#fs-frm select,
+#fs-frm textarea,
+#fs-frm fieldset,
+#fs-frm optgroup,
+#fs-frm label,
+#fs-frm #card-element:disabled {
+  font-family: inherit;
+  font-size: 100%;
+  color: inherit;
+  border: none;
+  border-radius: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+#fs-frm label,
+#fs-frm legend,
+#fs-frm ::placeholder {
+  font-size: .825rem;
+  margin-bottom: .5rem;
+  padding-top: .2rem;
+  display: flex;
+  align-items: baseline;
+}
+
+/* border, padding, margin, width */
+#fs-frm input,
+#fs-frm select,
+#fs-frm textarea,
+#fs-frm #card-element {
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: rgba(255,255,255,0.9);
+  padding: .75em 1rem;
+  margin-bottom: 1.5rem;
+}
+#fs-frm input:focus,
+#fs-frm select:focus,
+#fs-frm textarea:focus {
+  background-color: white;
+  outline-style: solid;
+  outline-width: thin;
+  outline-color: gray;
+  outline-offset: -1px;
+}
+#fs-frm [type="text"],
+#fs-frm [type="email"] {
+  width: 100%;
+}
+#fs-frm [type="button"],
+#fs-frm [type="submit"],
+#fs-frm [type="reset"] {
+  width: auto;
+  cursor: pointer;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+#fs-frm [type="button"]:focus,
+#fs-frm [type="submit"]:focus,
+#fs-frm [type="reset"]:focus {
+  outline: none;
+}
+#fs-frm [type="submit"],
+#fs-frm [type="reset"] {
+  margin-bottom: 0;
+}
+#fs-frm select {
+  text-transform: none;
+}
+
+#fs-frm [type="checkbox"] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  appearance: checkbox;
+  display: inline-block;
+  width: auto;
+  margin: 0 .5em 0 0 !important;
+}
+
+#fs-frm [type="radio"] {
+  -webkit-appearance: radio;
+  -moz-appearance: radio;
+  appearance: radio;
+}
+
+@media all and (max-width: 800px) {
+  .aboutMeToggleStyle {
+    padding: 20px 20px;
+    margin-top: 20px;
+  }
+  .toggleGlass {
+    padding: 15px;
+    }
+}
+
+@media all and (max-width: 500px) {
+  .introText {
+    font-size: 17px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .werBinIch {
+    font-size: 25px;
+  }
+  
+  .aboutMeKurz {
+    margin-bottom: 30px;
+  }
+
+  .inKurze {
+    padding: 40px;
+  }
+
+  .kurzItem {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  hr {
+    margin-top: 20px;
+  }
+
+  h3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 20px;
+  }
+
+  .par {
+      font-size: 18px;
+  }
+
+  #services {
+    margin-top: 30px;
+  }
+
+  .contAboutMe {
+    padding: 25px 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .serviceOne {
+    width: 180px;
+    height: 230px;
+    margin: 5px;
+    padding: 8px;
+  }
+  
+  .statisticPic {
+      width: 70px;
+  }
+  
+  .statisticCont {
+      margin: 5px;
+  }
+  
+  .statisticText {
+      font-size: 18px;
+  }
+  
+  .listItem {
+    padding: 15px;
+  }
+  
+  .successImg {
+    width: 30px;
+  }
+
+  
+  
+  .pokalImg {
+    width: 35px;
+  }
+  
+  #testimonials {
+    padding-top: 5px;
+    padding-bottom: 20px;
+  }
+}
+
+@media all and (max-width: 390px) {
+  .introText {
+    font-size: 14px;
+  }
+
+  .serviceOne {
+    width: 160px;
+    height: 190px;
+    padding: 5px;
+  }
+  
+  .statisticPic {
+      width: 50px;
+  }
+  
+  .statisticText {
+      font-size: 16px;
+  }
+
+  .containerWork {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width: 280px) {
+  .slavaPhoto {
+    width: 250px;
+    height: 320px;
+  }
+}
